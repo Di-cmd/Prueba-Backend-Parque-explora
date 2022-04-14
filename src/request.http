@@ -1,3 +1,10 @@
+
+// Por medio de este documento htttp: se permite hacer peticiones a la base de datos
+//para esto es necesario instalar la extension de visual studio code llamada REST client 
+//Para ejecutar cada petición, es necesario dar click en la opción send Request que aparece sobre cada petición. 
+
+
+
 //Muestra todas las experiencias existentes
 ###
 GET http://localhost:9000 HTTP/1.1
