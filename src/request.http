@@ -1,0 +1,47 @@
+//Muestra todas las experiencias existentes
+###
+GET http://localhost:9000 HTTP/1.1
+
+
+//Este permite crear nuevas experiencias
+###
+POST http://localhost:9000 HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo":"Relatividad",
+    "descripcion":"Un vistazo a las teorias de la fisica y la ciencia mas reconocidas",
+    "sala":"ciencia",
+    "destacada":"si es destacada",
+    "imagen":" "
+}
+
+
+//Elimina las experiencias por medio del ID
+###
+DELETE http://localhost:9000/2 HTTP/1.1
+
+
+//actualizar las experiencias por medio del ID
+###
+PUT http://localhost:9000/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo":"Conociendo el desierto",
+    "descripcion":"Un paseo por el mundo de los desiertos",
+    "sala":"desiertos",
+    "destacada":"No es destacada",
+    "imagen":" "
+}
+
+
+//Muestra la experiencia indicada por el ID
+###
+GET http://localhost:9000/2 HTTP/1.1
+
+
+
+//Muestra las experiencias  indicadas por la sala: Muestra todas las experiencias asociadas
+###
+GET http://localhost:9000/salas/oceano HTTP/1.1
