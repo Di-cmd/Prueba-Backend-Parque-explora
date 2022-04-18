@@ -6,7 +6,7 @@ const routes=express.Router()
 routes.get('/', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('SELECT *FROM expe', (err,rows)=>{
+        conn.query('SELECT *FROM experiencia', (err,rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -19,7 +19,7 @@ routes.get('/', (req,res)=>{
 routes.post('/', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('INSERT INTO expe set?', [req.body], (err)=>{
+        conn.query('INSERT INTO experiencia set?', [req.body], (err)=>{
             if(err) return res.send(err)
             res.send('La experiencia ha sido creada con exito')
         })
@@ -31,7 +31,7 @@ routes.post('/', (req,res)=>{
 routes.delete('/:id', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('DELETE FROM expe WHERE id=?', [req.params.id], (err)=>{
+        conn.query('DELETE FROM experiencia WHERE id=?', [req.params.id], (err)=>{
             if(err) return res.send(err)
             res.send('La experiencia ha sido eliminada con exito')
         })
@@ -43,7 +43,7 @@ routes.delete('/:id', (req,res)=>{
 routes.put('/:id', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('UPDATE expe set ? WHERE id=?',[req.body, req.params.id], (err)=>{
+        conn.query('UPDATE experiencia set ? WHERE id=?',[req.body, req.params.id], (err)=>{
             if(err) return res.send(err)
             res.send('La experiencia  se ha actualizado con exito')
         })
@@ -56,7 +56,7 @@ routes.put('/:id', (req,res)=>{
 routes.get('/:id', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('SELECT *FROM expe WHERE id=?',[req.params.id], (err, rows)=>{
+        conn.query('SELECT *FROM experiencia WHERE id=?',[req.params.id], (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -70,7 +70,7 @@ routes.get('/:id', (req,res)=>{
 routes.get('/salas/:sala', (req,res)=>{
     req.getConnection((err,conn)=>{
         if(err) return  res.send(err)
-        conn.query('SELECT *FROM expe WHERE sala=?',[req.params.sala], (err, rows)=>{
+        conn.query('SELECT *FROM experiencia WHERE sala=?',[req.params.sala], (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
